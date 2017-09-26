@@ -2,7 +2,7 @@
    "apiVersion": "v1",
    "kind": "Template",
    "labels": {
-      "template": "jdg-caching-service"
+      "template": "caching-service"
    },
    "metadata": {
       "annotations": {
@@ -15,7 +15,7 @@
          "template.openshift.io/provider-display-name": "Red Hat, Inc.",
          "template.openshift.io/support-url": "https://www.redhat.com/en/services/support"
       },
-      "name": "jdg-caching-service"
+      "name": "caching-service"
    },
    "objects": [
       {
@@ -168,6 +168,10 @@
                      {
                         "env": [
                            {
+                              "name": "PROFILE",
+                              "value": "CACHING-SERVICE"
+                           },
+                           {
                               "name": "OPENSHIFT_KUBE_PING_LABELS",
                               "value": "application=${APPLICATION_NAME}"
                            },
@@ -285,13 +289,13 @@
          "description": "The name for the application.",
          "name": "APPLICATION_NAME",
          "required": true,
-         "value": "infinispan-app"
+         "value": "caching-service-app"
       },
       {
          "description": "Infinispan image.",
          "name": "IMAGE",
          "required": true,
-         "value": "docker-registry.engineering.redhat.com/jboss-dataservices/dataservices72-caching-service"
+         "value": "docker-registry.engineering.redhat.com/jboss-dataservices/datagrid-online-services"
       },
       {
          "description": "Number of instances in the cluster.",
