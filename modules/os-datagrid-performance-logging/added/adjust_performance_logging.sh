@@ -1,6 +1,6 @@
 #!/bin/sh
 
-USE_PERFORMANCE_LOGGING=${USE_PERFORMANCE_LOGGING:-false}
+USE_PERFORMANCE_LOGGING=${USE_PERFORMANCE_LOGGING:-true}
 
 adjust_java_performance_logging() {
     local options="$@"
